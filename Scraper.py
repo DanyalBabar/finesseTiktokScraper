@@ -145,6 +145,23 @@ class Scraper:
 
         with open(targetCsvFile, "w", newline="", encoding="utf-8") as postFile:
             postFileWriter = csv.writer(postFile)
+            postFileWriter.writerow(
+                    [
+                        "postUrl",
+                        "postAccount",
+                        "postViews",
+                        "postLikes",
+                        "postCommentCount",
+                        "postComments",
+                        "postSaved",
+                        "postShared",
+                        "postCaption",
+                        "postHashtags",
+                        "postDate",
+                        "postDateCollected",
+                    ]
+                )
+            
             for postUrl, postViews in postLinks:
                 print(postUrl)
                 postAccount = ""
